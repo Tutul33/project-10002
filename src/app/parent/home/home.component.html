@@ -1,0 +1,27 @@
+<div>{{parentData.message}}</div>
+<div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab === 'tab1'" (click)="activeTab = 'tab1'">Tab1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab === 'tab2'" (click)="activeTab = 'tab2'">Tab2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab === 'tab3'" (click)="activeTab = 'tab3'">Tab3</a>
+      </li>
+    </ul>
+  
+    <div class="tab-content">
+      <div *ngIf="activeTab === 'tab1'" class="tab-pane active">
+        <app-child1 [data]="parentData" (updateData)="receiveData($event)"></app-child1>
+      </div>
+      <div *ngIf="activeTab === 'tab2'" class="tab-pane">
+        <app-child2 [data]="parentData" (updateData)="receiveData($event)"></app-child2>
+      </div>
+      <div *ngIf="activeTab === 'tab3'" class="tab-pane">
+        <app-child3 [data]="parentData" (updateData)="receiveData($event)"></app-child3>
+      </div>
+    </div>
+  </div>
+  
