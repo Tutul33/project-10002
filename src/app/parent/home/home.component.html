@@ -14,7 +14,8 @@
         <td>{{item.age}}</td>
         <td>{{item.address}}</td>
         <td>
-          <button class="btn btn-danger" (click)="deleteData(item.id)" >Delete</button>
+          <button class="btn btn-sm btn-info" (click)="editData(item.id)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteData(item.id)" >Delete</button>
         </td>
       </tr>
     </tbody>
