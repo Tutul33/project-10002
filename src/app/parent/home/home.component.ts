@@ -25,7 +25,7 @@ export class HomeComponent {
       .catch((error) => console.error('Error saving data', error));
   }
 
-  // Edit existing data
+  //Edit existing data
   editData(id: string) {
     const updatedData = { name: 'Jane Doe', age: 32 };
     this.firestoreService.updateData(this.collectionName, id, updatedData)
@@ -34,7 +34,7 @@ export class HomeComponent {
   }
 
   // Delete existing data
-  deleteData(id: string) {
+  deleteData(id:string) {
     this.firestoreService.deleteData(this.collectionName, id)
       .then(() => console.log('Data deleted successfully'))
       .catch((error) => console.error('Error deleting data', error));

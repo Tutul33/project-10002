@@ -1,7 +1,22 @@
 <div>
   <button (click)="saveData()">Save Data</button>
 
-  <ul>
-    <li *ngFor="let item of data">{{ item.name }} - {{ item.age }}</li>
-  </ul>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.address}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteData(item.id)" >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
